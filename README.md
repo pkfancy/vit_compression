@@ -30,7 +30,7 @@ motivation: there are too many parameters (nearly 2 / 3) in the two-lay MLP
 
 method:
 1. Because there is l2 norm in layernorm, which is used beform the MLP and after addition, we can approximate the mapping with higher dimensional spherical harmonics or Fourier series, such that we can reduce the huge overhead entailed by the MLP
-2. approximate the mapping with a linear transform such that $Av \approx \lambda u$, where $v$ is the input, $u$ is the output, $A$ is the linear mapping in the space (but not on the sphere) and $lambda$ an unknown scale factor
+2. approximate the mapping with a linear transform such that $Av \approx \lambda u$, where $v$ is the input, $u$ is the output, $A$ is the linear mapping in the space (but not on the sphere) and $\lambda$ an unknown scale factor which can be determined analytically
 
 
 
