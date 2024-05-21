@@ -30,5 +30,12 @@ motivation: there are too many parameters (nearly 2 / 3) in the two-lay MLP
 
 method:
 1. Because there is l2 norm in layernorm, which is used beform the MLP and after addition, we can approximate the mapping with higher dimensional spherical harmonics or Fourier series, such that we can reduce the huge overhead entailed by the MLP
-2. approximate the mapping with a linear transform such that $Av \approx \lambda u$
+2. approximate the mapping with a linear transform such that $Av \approx \lambda u$, where $v$ is the input, $u$ is the output, $A$ is the linear mapping in the space (but not on the sphere) and $lambda$ an unknown scale factor
+
+
+
+
+## Finetune a Tranformer with LDA while without training
+
+Linear probes, which are linear layers appended to the end of a pretrained model, are widely utilized in zero-shot learning. However, this can be solved analytically by LDA, without any training, while attaining an optimal objective. This should be also applicable to finetuning text-generation models, or matching a pair of image model and text model. In the fisrt scenarion, we can solve the linear mapping by least squares, while in the second scenario we can solve it by $Av \approx \lambda u$
 
